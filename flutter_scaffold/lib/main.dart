@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_scaffold/src/ui/form_login/login.dart';
 import 'package:flutter_scaffold/src/ui/gesture.dart';
 import 'package:flutter_scaffold/src/ui/makeItRain.dart';
 import 'src/app.dart';
@@ -17,9 +18,17 @@ void main(){
   ));
 }
 */
+/*
 void main(){
   runApp(new MaterialApp(
     title: "Make it Rain",
     home: new MakeItRain(),
+  ));
+}
+*/
+void main(){
+  runApp(new MaterialApp(
+    title: "Login",
+    home: new Login(),
   ));
 }

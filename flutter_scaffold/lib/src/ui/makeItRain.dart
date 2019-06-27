@@ -10,6 +10,14 @@ class MakeItRain extends StatefulWidget{
 
 class MakeItRainState extends State<MakeItRain> {
 
+  int _moneyCounter = 0;
+  void _rainMoney(){
+    // important - setState is called each time we need to update the UI
+    setState(() {
+      _moneyCounter = _moneyCounter + 100;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -17,6 +25,28 @@ class MakeItRainState extends State<MakeItRain> {
         title: new Text("Make it Rain!"),
         backgroundColor: Colors.lightGreen,
       ),
+
+      body: new Container(
+        child: new Column(
+          children: <Widget>[
+            new Center(
+              child: new Text("Get Rich!", style: new TextStyle( color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 29.9 ),),
+            ),
+
+            new Expanded(child: new Center(
+              child: new Text("\$$_moneyCounter",
+                style: new TextStyle(color: _moneyCounter > 2000 ? Colors.blueAccent : Colors.red, fontSize: 49.9, fontWeight: FontWeight.w800),),
+            )),
+
+            new Expanded(
+                child: new Center(
+                  child: new FlatButton(color: Colors.lightGreen,textColor: Colors.white70,onPressed: _rainMoney, child: new Text("Let It Rain!", style: new TextStyle(fontSize: 19.9),)),
+            )),
+
+          ],
+        ),
+      ),
+
     );
   }
 }
